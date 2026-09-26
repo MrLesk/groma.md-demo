@@ -24,7 +24,7 @@ jobs:
           BASE: ${{ github.event.pull_request.base.sha }}
           HEAD: ${{ github.event.pull_request.head.sha }}
         run: echo "from=$(git merge-base "$BASE" "$HEAD")" >> "$GITHUB_OUTPUT"
-      - uses: MrLesk/groma.md-action@0ce426f5fb8a924dcd6f5d3314c42636eb86158c
+      - uses: MrLesk/groma.md-action@8cb1154f99dc323f51f47af52be66086870f3809
         id: map
         with:
           from: ${{ steps.commits.outputs.from }}
@@ -55,7 +55,7 @@ jobs:
         with:
           name: groma-comparison
           path: comparison
-      - uses: MrLesk/groma.md-action/publish@0ce426f5fb8a924dcd6f5d3314c42636eb86158c
+      - uses: MrLesk/groma.md-action/publish@8cb1154f99dc323f51f47af52be66086870f3809
         id: preview
         with:
           directory: comparison
