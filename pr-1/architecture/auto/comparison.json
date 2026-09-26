@@ -1,0 +1,14 @@
+{
+  "from": "2e48783b1b6feffa6fa4691702e9fa56681c7613",
+  "revision": "d0563eba47884b81f640a94067561a66605e602d",
+  "components": {
+    "added": 2,
+    "modified": 1,
+    "removed": 1
+  },
+  "relationships": {
+    "added": 2,
+    "modified": 0,
+    "removed": 1
+  }
+}
