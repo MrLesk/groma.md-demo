@@ -1,5 +1,7 @@
 # Groma PR comparison demo
 
+[Open the permanent demo PR](https://github.com/MrLesk/groma.md-demo/pull/1). The Groma bot comment links to the public before/after map.
+
 A small runnable shop shows how a GitHub PR changes architecture and source together. The permanent draft PR moves receipt delivery out of checkout and into a separate worker. It stays open as a live example.
 
 This demo uses Node 24 and has no package dependencies. Receipts are JSON messages printed to the terminal; no email service or account is needed.
