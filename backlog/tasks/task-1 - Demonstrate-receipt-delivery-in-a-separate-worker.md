@@ -1,11 +1,11 @@
 ---
 id: TASK-1
 title: Demonstrate receipt delivery in a separate worker
-status: In Progress
+status: Done
 assignee:
   - '@codex'
 created_date: '2026-09-26 16:36'
-updated_date: '2026-09-26 16:57'
+updated_date: '2026-09-26 16:59'
 labels: []
 dependencies: []
 references:
@@ -52,7 +52,7 @@ The permanent Groma demo PR needs a runnable before/after architecture change. T
 - [x] #1 Checkout persists an order and queues its receipt, returning queued before delivery.
 - [x] #2 Running the worker delivers queued receipt messages and removes completed jobs.
 - [x] #3 Committed Groma Markdown reflects the new responsibility and relationship boundaries, with useful source diffs and unchanged context.
-- [ ] #4 The draft PR remains open and its Groma workflow publishes a working public comparison.
+- [x] #4 The draft PR remains open and its Groma workflow publishes a working public comparison.
 <!-- AC:END -->
 
 ## Implementation Plan
@@ -69,4 +69,12 @@ Cold simplicity and final full-context complexity reviews passed. Implementer re
 The Action is updating its comment link to include revision/from hashes after a repeat-visit cache issue was reproduced. Refresh the trusted main-branch workflow pin and verify the final hosted link before completing this demo.
 
 Trusted main workflow now pins Action commit 8cb1154, including the fresh commit-specific comment link. The existing preview directory and comment ID are retained.
+
+Final repeat-visit verification passed with the new commit-specific link. Hosted run 36257284472 used the updated Action, kept comment ID 5848070088, and linked revision a274189. Opening that exact bot link in the previously used browser showed the current commit and complete map immediately.
 <!-- SECTION:NOTES:END -->
+
+## Final Summary
+
+<!-- SECTION:FINAL_SUMMARY:BEGIN -->
+Delivered a runnable checkout-to-worker change as a permanent open draft PR. The behavior test and two rescans pass. Hosted build/publish runs pass and preserve one bot comment across pushes. Browser verification confirms the changed hierarchy, prose and source diffs, and fresh current-revision data on repeat visits. The workflow is pinned to reviewed Action commit 8cb1154. PR: https://github.com/MrLesk/groma.md-demo/pull/1; current comparison link lives in bot comment 5848070088. All required reviews passed.
+<!-- SECTION:FINAL_SUMMARY:END -->
