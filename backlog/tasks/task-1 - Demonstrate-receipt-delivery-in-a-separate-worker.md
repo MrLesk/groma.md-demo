@@ -5,7 +5,7 @@ status: In Progress
 assignee:
   - '@codex'
 created_date: '2026-09-26 16:36'
-updated_date: '2026-09-26 16:38'
+updated_date: '2026-09-26 16:44'
 labels: []
 dependencies: []
 references:
@@ -60,3 +60,9 @@ The permanent Groma demo PR needs a runnable before/after architecture change. T
 <!-- SECTION:PLAN:BEGIN -->
 Add a filesystem receipt queue to the API and a separate Node worker that prints queued receipts. Curate the committed C4 architecture through the Groma CLI; ordinary OKF Markdown explains the same responsibilities. The queue is the file-based collaboration between two runtimes, with no new Groma model. Add one behavior test: before running the worker the receipt job exists, afterward its content has been delivered and removed. This catches accidental synchronous delivery or an inert worker; no current tests cover the demo. Use the Action example pinned to the reviewed implementation commit and verify its hosted comment and map.
 <!-- SECTION:PLAN:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Cold simplicity and final full-context complexity reviews passed. Implementer review confirms the queue-to-worker test exercises real separate processes with isolated data. Local browser verified changed-only hierarchy, component counts +2/~1/-1, relationship counts +2/-1, readable Checkout description diff, and +3/-3 source diff. Two rescans preserve curated structure. Existing core limitation: the old authored relationship row to the deleted source remains unresolved in Markdown, but is absent from the current rendered world; core relationship deletion is outside this demo. The main branch now has a later documentation commit, so hosted validation must still compare from merge base 2e48783, not the current main tip.
+<!-- SECTION:NOTES:END -->
