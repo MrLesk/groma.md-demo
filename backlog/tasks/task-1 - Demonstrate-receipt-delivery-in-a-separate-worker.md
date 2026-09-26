@@ -1,11 +1,11 @@
 ---
 id: TASK-1
 title: Demonstrate receipt delivery in a separate worker
-status: Done
+status: In Progress
 assignee:
   - '@codex'
 created_date: '2026-09-26 16:36'
-updated_date: '2026-09-26 16:53'
+updated_date: '2026-09-26 16:57'
 labels: []
 dependencies: []
 references:
@@ -52,7 +52,7 @@ The permanent Groma demo PR needs a runnable before/after architecture change. T
 - [x] #1 Checkout persists an order and queues its receipt, returning queued before delivery.
 - [x] #2 Running the worker delivers queued receipt messages and removes completed jobs.
 - [x] #3 Committed Groma Markdown reflects the new responsibility and relationship boundaries, with useful source diffs and unchanged context.
-- [x] #4 The draft PR remains open and its Groma workflow publishes a working public comparison.
+- [ ] #4 The draft PR remains open and its Groma workflow publishes a working public comparison.
 <!-- AC:END -->
 
 ## Implementation Plan
@@ -65,10 +65,8 @@ Add a filesystem receipt queue to the API and a separate Node worker that prints
 
 <!-- SECTION:NOTES:BEGIN -->
 Cold simplicity and final full-context complexity reviews passed. Implementer review confirms the queue-to-worker test exercises real separate processes with isolated data. Local browser verified changed-only hierarchy, component counts +2/~1/-1, relationship counts +2/-1, readable Checkout description diff, and +3/-3 source diff. Two rescans preserve curated structure. Existing core limitation: the old authored relationship row to the deleted source remains unresolved in Markdown, but is absent from the current rendered world; core relationship deletion is outside this demo. The main branch now has a later documentation commit, so hosted validation must still compare from merge base 2e48783, not the current main tip.
+
+The Action is updating its comment link to include revision/from hashes after a repeat-visit cache issue was reproduced. Refresh the trusted main-branch workflow pin and verify the final hosted link before completing this demo.
+
+Trusted main workflow now pins Action commit 8cb1154, including the fresh commit-specific comment link. The existing preview directory and comment ID are retained.
 <!-- SECTION:NOTES:END -->
-
-## Final Summary
-
-<!-- SECTION:FINAL_SUMMARY:BEGIN -->
-The permanent draft PR moves receipt delivery from checkout to a separate Node worker, with committed C4 Markdown and source ownership. The isolated behavior test verifies queuing, delivery, and job removal. Two rescans preserve the architecture. Hosted run 36256894812 passed compare and publish; browser verification confirmed the public hierarchy, before/after descriptions, and source diff. The bot comment compares merge base 2e48783 to PR head d0563eb despite a newer main tip. Cold, implementer, and full-context reviews passed. Demo PR: https://github.com/MrLesk/groma.md-demo/pull/1; preview: https://mrlesk.github.io/groma.md-demo/pr-1/architecture/auto/.
-<!-- SECTION:FINAL_SUMMARY:END -->
