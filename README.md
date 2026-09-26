@@ -16,6 +16,14 @@ curl -X POST http://localhost:3000/orders \
   -d '{"email":"reader@example.com","productId":"notebook"}'
 ```
 
-On `main`, checkout saves an order and delivers its receipt before returning. Products and prices come from the catalog; orders are stored in `data/orders/`. This is a local review example, without payment processing.
+On this PR branch, checkout saves an order and queues its receipt in `data/receipts/`. The API returns `receipt: "queued"`. Run the separate worker from the repository root to deliver the queued receipts:
+
+```sh
+node worker/src/delivery.js
+```
+
+The worker prints each receipt and removes its completed job. On `main`, checkout delivers the receipt before returning instead. Products and prices come from the catalog; orders are stored in `data/orders/`. This is a local review example, without payment processing.
 
 The committed `groma/` folder describes the same behavior as ordinary Markdown. Groma adds the C4 structure and exact source ownership needed for its comparison map. The PR workflow comes from [groma.md-action](https://github.com/MrLesk/groma.md-action).
+
+Run the behavior check with `node --test test/*.test.mjs`.

@@ -1,0 +1,6 @@
+{
+  "name": "receipt-worker",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node src/delivery.js" }
+}

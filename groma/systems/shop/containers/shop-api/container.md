@@ -9,4 +9,4 @@ groma:
 description: Accepts and records orders
 ---
 
-The HTTP application accepts POST /orders. Checkout reads the catalog, stores the order, and delivers its receipt before responding.
+The HTTP application accepts POST /orders. Checkout reads the catalog, stores the order, and queues a receipt before responding. Delivery runs in a separate worker.

@@ -9,7 +9,7 @@ groma:
     - scanner: javascript
       file: api/src/checkout.js
       symbol: checkout
-description: Places an order and delivers its receipt
+description: Places an order and queues its receipt
 ---
 
-Validates the email, looks up the product, and saves the order. Receipt delivery completes before checkout returns a delivered status.
+Validates the email, looks up the product, and saves the order. It writes a receipt job and returns a queued status without waiting for receipt delivery.
